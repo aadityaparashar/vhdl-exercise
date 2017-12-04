@@ -38,7 +38,7 @@ begin
 
 
     -- Here we calculate inverted bits for subtraction if necessary
-    m_inverted <= (not m) when sub = '1' else m;
+    m_inverted <= (not m) when sub = '1' else m; -- This might look incorrect, but it works and reduces the code size (no individual commads to invert bits, so if you increase bit length you need not change this)
     -- Addition
     adder_instance: carry_ripple_adder
         port map(
